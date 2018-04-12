@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spectrum</title>
+<title>Club Echo</title>
 <meta name="description" content="">
 <meta name="author" content="">
 
@@ -36,15 +36,15 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand page-scroll" href="#page-top"><i class="fa fa-play fa-rotate-270"></i> Spectrum</a> </div>
+      <a class="navbar-brand page-scroll" href="#page-top"><i class="fa fa-play fa-rotate-270"></i>Club Echo</a> </div>
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#page-top" class="page-scroll">Home</a></li>
-        <li><a href="#about" class="page-scroll">About</a></li>
-        <li><a href="#portfolio" class="page-scroll">Portfolio</a></li>
-        <li><a href="#contact" class="page-scroll">Contact</a></li>
+        <li><a href="#about" class="page-scroll">About Club Echo</a></li>
+        <li><a href="#portfolio" class="page-scroll">Gallery</a></li>
+        <li><a href="#contact" class="page-scroll">Register</a></li>
       </ul>
     </div>
     <!-- /.navbar-collapse --> 
@@ -57,8 +57,8 @@
     <div class="container">
       <div class="row">
         <div class="intro-text">
-          <h1>Spectrum</h1>
-          <p>Web Design • Photography • Product Design</p>
+          <h1 style="color:black">Club Echo</h1>
+          <p style="color:black">Every Champion Has an Opinion</p>
           <a href="#about" class="btn btn-custom btn-lg page-scroll">Learn More</a> </div>
       </div>
     </div>
@@ -68,16 +68,15 @@
 <div id="about">
   <div class="container">
     <div class="section-title text-center center">
-      <h2>About Me</h2>
+      <h2>About Club Echo</h2>
       <hr>
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-6"> <img src="img/about.jpg" class="img-responsive" alt=""> </div>
       <div class="col-xs-12 col-md-6">
         <div class="about-text">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
-          <a href="#portfolio" class="btn btn-default btn-lg page-scroll">My Portfolio</a> </div>
+          <p>Club ECHO lives with the principles that everyone is a champion and every champion has an opinion. The club runs in LPU by the department of soft skills- I</p>
+          <a href="#portfolio" class="btn btn-default btn-lg page-scroll">Photo Gallery</a> </div>
       </div>
     </div>
   </div>
@@ -86,7 +85,7 @@
 <div id="portfolio">
   <div class="container">
     <div class="section-title text-center center">
-      <h2>Portfolio</h2>
+      <h2>Gallery</h2>
       <hr>
     </div>
     <div class="categories">
@@ -220,31 +219,56 @@
 <div id="contact" class="text-center">
   <div class="container">
     <div class="section-title center">
-      <h2>Get In Touch</h2>
+      <h2>Register now</h2>
       <hr>
     </div>
     <div class="col-md-8 col-md-offset-2">
-      <form name="sentMessage" id="contactForm" novalidate>
+      <form action="store" method="POST" name="sentMessage" id="contactForm" novalidate>
+ <input type="hidden" name="_token" value="{{ csrf_token()}}">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+              <input type="text" name="name" class="form-control" placeholder="Name" required="required">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <input type="email" name="email" class="form-control" placeholder="Email" required="required">
               <p class="help-block text-danger"></p>
             </div>
           </div>
         </div>
-        <div class="form-group">
-          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
-          <p class="help-block text-danger"></p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="number" name="regno" class="form-control" placeholder="Regisgtration Number" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="number" name="mob" class="form-control" placeholder="Mobile Number" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <select name="event" class="form-control">
+    <option value="null">Select Event</option>              
+    <option value="Echo">Echo Talkz</option>
+    <option value="kahani">Kahaaniyo ka pitara</option>
+    <option value="dress">Dress to Express</option>
+    <option value="blog">Blogathon</option>
+  </select>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
         </div>
         <div id="success"></div>
-        <button type="submit" class="btn btn-default btn-lg">Send Message</button>
+        <button type="submit" name="submit" id="Submit" class="btn btn-default btn-lg">Register</button>
       </form>
       <div class="social">
         <ul>
